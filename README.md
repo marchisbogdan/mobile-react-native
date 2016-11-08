@@ -1,4 +1,7 @@
 # mobile-react-native
+
+An app that manages the employees credentials of an institution.
+
 A school project that has the following requirements:
     -an input form
     -a list of items
