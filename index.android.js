@@ -14,8 +14,8 @@ import {
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import createLogger from 'redux-logger'
 import thunk from 'redux-thunk';
-// import {noteReducer} from './src/note';
-// import {authReducer} from './src/auth';
+import {employeeReducer} from './src/employee';
+import {authReducer} from './src/auth';
 import {Router} from './src/Router'
 
 const rootReducer = combineReducers({});
