@@ -25,9 +25,9 @@ export class EmplEdit extends Component{
     const currentRoutes = nav.getCurrentRoutes();
     const currentRoute = currentRoutes[currentRoutes.length - 1];
     if (currentRoute.data) {
-      this.state = {note: {...currentRoute.data}, isSaving: false};
+      this.state = {employee: {...currentRoute.data}, isSaving: false};
     } else {
-      this.state = {note: {text: ''}, isSaving: false};
+      this.state = {employee: {text: ''}, isSaving: false};
     }
     registerRightAction(nav, this.onSave.bind(this));
   }
