@@ -19,7 +19,7 @@ export const search = async (token) => {
 
 export const save = async(token,employee) => {
   const body = JSON.stringify(employee);
-  const url = employee._id ? `${apiUrl}/note/${employee._id}` : `${apiUrl}/note`;
+  const url = employee._id ? `${apiUrl}/employee/${employee._id}` : `${apiUrl}/employee`;
   const method = employee._id ? 'PUT' : 'POST';
   log(`${method} ${url}`);
   let ok;

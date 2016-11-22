@@ -53,7 +53,7 @@ export class Router extends Component {
   }
 
   onAuthSucceeded() {
-    this.navigator.push(NoteList.route);
+    this.navigator.push(EmplList.route);
   }
 }
 
