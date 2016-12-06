@@ -1,10 +1,10 @@
 import {
       OK, NOT_FOUND, LAST_MODIFIED, NOT_MODIFIED, BAD_REQUEST, ETAG,
   CONFLICT, METHOD_NOT_ALLOWED, NO_CONTENT, CREATED, setIssueRes 
-} from "utils.js";
+} from './utils.js';
 
 import Router from 'koa-router';
-import {getLogger} from 'utils.js';
+import {getLogger} from './utils.js';
 
 const log = getLogger('employee');
 
@@ -109,7 +109,7 @@ export class EmployeeRouter extends Router {
         let insertedEmployee = await this.employeeStore.insert(employee);
         employeesLastUpdateMillis = employee.updated;
         this.setEmployeeRes(res,CREATED,insertedEmployee);
-        this.io.emit('note-created',insertedEmployee);
+        this.io.emit('employee-created',insertedEmployee);
     }
 
     setEmployeeRes(res,status,employee){

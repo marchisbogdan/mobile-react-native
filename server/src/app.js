@@ -34,7 +34,7 @@ app.use(authApi.routes()).use(authApi.allowedMethods());
 log('config protected routes');
 app.use(convert(koaJwt(jwtConfig)));
 const protectedApi = new Router({prefix: apiUrl});
-const employeeStore = dataStore({filname: '../notes.json', autoload: true});
+const employeeStore = dataStore({filname: '../employees.json', autoload: true});
 protectedApi.use('/employee', new EmployeeRouter({employeeStore, io}).routes());
 app.use(protectedApi.routes()).use(protectedApi.allowedMethods());
 
@@ -57,13 +57,13 @@ io.on('connection', (socket) => {
     }
     let employees = await employeeStore.find({});
     if(employees.length > 0){
-        log(`employee store has ${notes.length} employees`)
+        log(`employee store has ${employees.length} employees`)
     }else{
         log(`employee store was empty, adding some employees`);
         for (let i = 0; i < 3; i++) {
             let salary = 3000 + i * 300;
-            let note = await noteStore.insert({name: `Employee ${i}`, position: `senior dev`, salary: salary, status: "active", updated: Date.now(), user: admin._id, version: 1});
-            log(`employee added ${JSON.stringify(note)}`);
+            let employee = await employeeStore.insert({name: `Employee ${i}`, position: `senior dev`, salary: salary, status: "active", updated: Date.now(), user: admin._id, version: 1});
+            log(`employee added ${JSON.stringify(employee)}`);
         }
     }
 })();
