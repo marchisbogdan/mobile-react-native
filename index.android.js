@@ -14,12 +14,14 @@ import {
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import createLogger from 'redux-logger'
 import thunk from 'redux-thunk';
-import {employeeReducer} from './src/employee';
-import {authReducer} from './src/auth';
-import {Router} from './src/Router'
+//import {employeeReducer} from './src/employee';
+//import {authReducer} from './src/auth';
+import {Router} from './src/Router';
+import reducersCombined from './src/reducers';
 
-const rootReducer = combineReducers({});
-const store = createStore(rootReducer, applyMiddleware(thunk, createLogger({colors: {}})));
+//const rootReducer = combineReducers({employeeReducer: employeeReducer,authReducer: authReducer});
+
+const store = createStore(reducersCombined, applyMiddleware(thunk, createLogger({colors: {}})));
 
 export default class basicProject extends Component {
   render() {

@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {ListView, Text, View, StatusBar, ActivityIndicator} from 'react-native';
 import {EmplEdit} from './EmplEdit';
-import {EmplView} from '.EmplView';
+import {EmplView} from './EmplView';
 import {loadEmployees,cancelLoadEmployee} from './service';
 import {registerRightAction, getLogger, issueToText} from '../core/utils';
 import styles from '../core/styles';

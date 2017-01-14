@@ -55,7 +55,7 @@ export const saveEmployee = (employee) => async(dispatch,getState) => {
 
 export const cancelSaveEmployee = () => action(CANCEL_SAVE_EMPLOYEE)
 
-export const employeeReducer = (state = {items: [], isLoading: false, isSaving:false},action) => { //newState(new object)
+export function employeeReducer (state = {items: [], isLoading: false, isSaving:false},action) { //newState(new object)
   switch (action.type) {
     case LOAD_EMPLOYEE_STARTED:
       return {...state, isLoading:true, isLoadingCancelled: false, issue:null};

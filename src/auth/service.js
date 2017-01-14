@@ -20,7 +20,7 @@ export const login = (user) => async(dispatch,getState) => {
   }
 };
 
-export const authReducer = (state = {token = null, isLoading = false},action) => {
+export function authReducer (state = {token : null, isLoading : false},action){
   switch (action.type) {
     case AUTH_STARTED:
       return {token:null, isLoading:true};

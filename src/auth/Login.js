@@ -34,7 +34,7 @@ export class Login extends Component {
   render(){
     log('render');
     const auth = this.state.auth;
-    llet message = issueToText(auth.issue);
+    let message = issueToText(auth.issue);
     return (
       <View style={styles.content}>
         <ActivityIndicator animating={auth.isLoading} style={styles.activityIndicator} size="large"/>
